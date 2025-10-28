@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPter Waiting List</title>
+    <link rel="stylesheet" href="MyPter.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">MyPter</div>
+      <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Programs</a>
+        <a href="#">Invest</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Be Smart.<br />Be MyPter.<br />Be You.</h1>
+        <p>
+          Join our exclusive waiting list to connect with personal trainers and
+          investors shaping the next generation of fitness.
+        </p>
+        <button id="wishlistBtn">Join Waiting List</button>
+
+        <!--  Testimonial -->
+        <div class="testimonial">
+          “Get early access and updates about MyPter programs and investor
+          spots.” <br />
+          <span>— Be the First to Join</span>
+        </div>
+
+        <!-- Sound Control -->
+        <!-- <button id="soundToggle">🔈 Mute</button> -->
+      </div>
+
+      <!-- <div class="hero-video">
+        <h2>Watch Our Story</h2>
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="MyPter Promo Video"
+          allowfullscreen
+        ></iframe>
+        <p class="video-caption">Your fitness journey starts here.</p>
+      </div>
+    </section> -->
+
+    <div class="hero-video">
+  <h2>Watch Our Story</h2>
+
+  <!--  Local or Google Drive Embedded Video -->
+  <video autoplay muted loop playsinline controls poster="preview.jpg">
+    <source
+      src="https://drive.google.com/uc?export=preview&id=1zNQSgcZgCyUOqgArBl-AclmuOZmZRtvd"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  <p class="video-caption">Your fitness journey starts here.</p>
+</div>
+
+    <!-- Modal -->
+    <div class="modal" id="wishlistModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Join the MyPter Wishlist</h2>
+        <p>Reserve your early spot now!</p>
+
+        <input type="text" id="name" placeholder="Full Name" />
+        <input type="email" id="email" placeholder="Email Address" />
+        <input type="text" id="country" placeholder="Country (e.g., India)" />
+        <select id="language">
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Russian">Russian</option>
+        </select>
+        <select id="role">
+          <option value="">Your Role</option>
+          <option value="Client">Client</option>
+          <option value="Investor">Investor</option>
+          <option value="Trainer">Trainer</option>
+        </select>
+        <button id="submitWishlist">Submit</button>
+        <p id="message"></p>
+      </div>
+    </div>
+
+    <!-- ✅ Background Music
+    <audio id="bgMusic" autoplay loop>
+      <source
+        src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_2e7a21d2e4.mp3?filename=relaxing-ambient-110130.mp3"
+        type="audio/mpeg"
+      />
+    </audio> -->
+
+    <script src="MyPter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,336 @@
+/* ----------------------- RESET ----------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #00c896, #0b1b44);
+  background-size: 200% 200%;
+  animation: bgShift 12s ease-in-out infinite;
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ----------------------- NAVBAR ----------------------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ----------------------- HERO SECTION ----------------------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10rem 6% 5rem 6%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+#wishlistBtn {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: #0b1b44;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#wishlistBtn:hover {
+  background: #0b1b44;
+  color: white;
+}
+
+/* .hero-video {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.hero-video h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+} */
+
+/* .hero-video iframe {
+  width: 100%;
+  max-width: 440px;
+  height: 250px;
+  border-radius: 16px;
+  border: 3px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+} */
+
+.hero-video {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-video h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.hero-video video {
+  width: 420px;
+  height: 260px;
+  border-radius: 16px;
+  border: 3px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.video-caption {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: #e6e6e6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-video video {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* 
+.video-caption {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+} */
+
+/* ----------------------- TESTIMONIAL ----------------------- */
+.testimonial {
+  margin-top: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  padding: 1.5rem 1.8rem;
+  border-left: 6px solid #00ffb3;
+  border-radius: 16px;
+  max-width: 420px;
+  background: linear-gradient(270deg, #00ffb3, #0088ff, #0b1b44, #00ffb3);
+  background-size: 400% 400%;
+  animation: gradientFlow 6s ease infinite;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial span {
+  display: block;
+  color: #00ffb3;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ----------------------- MODAL ----------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content input,
+.modal-content select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  background: #00c896;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: #0b1b44;
+}
+
+#message {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* ----------------------- SOUND TOGGLE ----------------------- */
+/* #soundToggle {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #00ffb3;
+  border-radius: 50px;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+#soundToggle:hover {
+  background: #00ffb3;
+  color: #0b1b44;
+} */
+
+/* ----------------------- RESPONSIVE ----------------------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 8rem;
+  }
+
+  .testimonial {
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-video iframe {
+    height: 220px;
+  }
+}
