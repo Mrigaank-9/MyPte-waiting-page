@@ -351,3 +351,83 @@ nav {
     height: 220px;
   }
 }
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.5rem 6%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(11, 27, 68, 0.95);
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 65%;
+    height: calc(100vh - 70px);
+    padding: 2rem;
+    text-align: center;
+    border-left: 2px solid #00ffb3;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* ----------- Hero Section Adjustments ----------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 8rem;
+  }
+
+  .hero-text {
+    flex: 1 1 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .testimonial {
+    margin: 2rem auto;
+  }
+
+  .hero-video video {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* ----------- Very Small Screens (Mobile) ----------- */
+@media (max-width: 500px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  #wishlistBtn {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .testimonial {
+    font-size: 0.9rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
